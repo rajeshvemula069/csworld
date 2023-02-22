@@ -43,6 +43,7 @@ async function quoteApi() {
     let response = await fetch('https://api.quotable.io/random')
     let quote = await response.json()
     quoEle.innerText = quote.content
-    authorEle.innerText = "--" + " " + quotesList[i].author
+    authorEle.innerText = "--" + " " + quote.author
 
 }
+document.getElementById('getQuote').onclick = quoteApi
